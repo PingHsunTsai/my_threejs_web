@@ -1,4 +1,4 @@
-import { Suspense, useRef, useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 import  CanvasLoader  from '../Loader';
@@ -23,7 +23,7 @@ const Computers = ({isMobile}) => {
       <primitive
         object={computer.scene}
         scale={isMobile ? 0.45 : 0.65}
-        position={isMobile ?[0, -3.3, -1.5] : [0, -3.6, -1.5]}
+        position={isMobile ? [0, -3.3, -1.5] : [0, -3.6, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>

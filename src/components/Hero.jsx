@@ -13,8 +13,7 @@ const Hero = () => {
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>Hi, I'm <span className='text-[#915eff]'>PingHsun</span></h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-          My specialties include 3D modeling, geometry optimization, automation integration, fabrication, robotics, perception, 
-          and user interface design, all combined with full-stack software development expertise.
+           A Software, Applicaiton, Geometry Engineer
           <br className='sm:block hidden'/>
           </p>
           <h2 className={`${styles.heroSubText} text-white`}>Let me share some exciting projects with you!</h2>
@@ -22,9 +21,10 @@ const Hero = () => {
       </div>
 
       <ComputersCanvas />
-      <div className='"absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
+
+      <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
         <a href='#about'>
-          <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-cneter items-start p-2'>
+          <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
             <motion.div
               animate={{ 
                 y: [0, 24, 0]
