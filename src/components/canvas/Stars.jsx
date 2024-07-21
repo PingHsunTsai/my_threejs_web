@@ -72,10 +72,9 @@ const StarsCanvas = () => {
 
   return (
     <div
-      className='w-full h-auto absolute inset-0' //z=[-1]
+      className='w-full h-auto absolute inset-0 z-[-1]' //z=[-1]
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{ zIndex: 0 }}
     >
       <Canvas camera={{ position: [0, 0, 1] }}>
         <Suspense fallback={null}>
