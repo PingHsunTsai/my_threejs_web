@@ -25,6 +25,9 @@ import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
+import compas_icon_white from "./company/compas_icon_white.png";
+import usi from "./company/usi.png";
+import gkr from "./company/gkr.png";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
@@ -59,4 +62,7 @@ export {
   carrent,
   jobit,
   tripguide,
+  compas_icon_white,
+  gkr,
+  usi,
 };
