@@ -6,6 +6,7 @@ import web from "./web.png";
 import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
+import click from "./click.png";
 
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
@@ -21,17 +22,21 @@ import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
 import compas_icon_white from "./company/compas_icon_white.png";
 import usi from "./company/usi.png";
 import gkr from "./company/gkr.png";
+import eth from "./company/eth.png";
+import tku from "./company/tku.png";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import rosp from "./robotic_on_site_plastering.png";
+import compas_viewer from "./compas_viewer.png";
+import ribbed_slab from "./ribbed_slab.png";
+import irp from "./irp.png";
+import ml_rosp from "./ml_rosp.png";
+import concrete_canoe from "./concrete_canoe.png";
+import bachelor_project from "./bachelor_project.png";
+import bachelor_thesis from "./bachelor_thesis.png";
+import master_thesis from "./master_thesis.png";
 
 export {
   logo,
@@ -42,6 +47,7 @@ export {
   github,
   menu,
   close,
+  click,
   css,
   docker,
   figma,
@@ -55,14 +61,18 @@ export {
   tailwind,
   typescript,
   threejs,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
-  carrent,
-  jobit,
-  tripguide,
+  rosp,
+  compas_viewer,
+  ribbed_slab,
+  irp,
+  ml_rosp,
+  concrete_canoe,
+  bachelor_project,
+  bachelor_thesis,
+  master_thesis,
   compas_icon_white,
   gkr,
   usi,
+  eth,
+  tku,
 };

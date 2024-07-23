@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 import { styles } from '../styles';
 
 const Hero = () => {
@@ -10,10 +12,10 @@ const Hero = () => {
         <div>
           <h1 className={`${styles.heroHeadText} text-white text-outline`}>Hi, I'm <span className='text-secondary'>PingHsun</span></h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100 text-outline`}>
-            An Engineer Enjoying Creativitive And Innovation !
+            Innovative Engineer Driven by Chellange!
             <br className='sm:block hidden'/>
           </p>
-          <h2 className={`${styles.heroSubText} text-white text-outline`}>Let me introduce myself -&gt; </h2>
+          <h2 className={`${styles.heroSubText} text-white text-outline`}>Allow me to break through the clouds and introduce myself -&gt; </h2>
         </div>
       </div>
 
@@ -21,7 +23,7 @@ const Hero = () => {
         <ParticlesCanvas />
       </div> */}
 
-      {/* <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
+      <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
         <a href='#about'>
           <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
             <motion.div
@@ -37,7 +39,7 @@ const Hero = () => {
             />
           </div>
         </a>
-      </div> */}
+      </div>
     </section>
   )
 }

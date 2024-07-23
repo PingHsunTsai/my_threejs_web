@@ -2,13 +2,13 @@ import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeli
 import { motion } from "framer-motion";
 import 'react-vertical-timeline-component/style.min.css';
 import { styles } from "../styles";
-import { experiences } from "../constants";
+import { study_experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 
 const ExperienceCard = ({ experience }) => (
   <VerticalTimelineElement
-    contentStyle={{ background: '#050816', color: '#050816', outline: 'solid 1px'}}
+    contentStyle={{ background: '#050816', color: '#fff', outline: 'solid 1px'}}
     contentArrowStyle={{ borderRight: '20px solid  color-white' }}
     iconStyle={{ background: experience.iconBg }}
     icon={
@@ -48,13 +48,13 @@ const Experience = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} text-outline`}>What I have done so far</p>
-        <h2 className={`${styles.sectionHeadText} text-outline`}>Work Experience.</h2>
+        <p className={`${styles.sectionSubText} text-outline`}>What I have study so far</p>
+        <h2 className={`${styles.sectionHeadText} text-outline`}>Study Experience.</h2>
       </motion.div>
 
       <div className="mt-20 flex flex-col">
         <VerticalTimeline>
-          {experiences.map((experience, index) => (
+          {study_experiences.map((experience, index) => (
             <ExperienceCard key={index} experience={experience} />
             ))}
         </VerticalTimeline>

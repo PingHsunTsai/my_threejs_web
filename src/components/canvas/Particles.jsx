@@ -58,7 +58,7 @@ function Particles({ count, position, color, scale }) {
 const ParticlesCanvas = () => {
   const particleSystems = useMemo(() => {
     const systems = []
-    for (let i = 0; i < 120; i++) {
+    for (let i = 0; i < 80; i++) {
       systems.push({
         count: Math.floor(getRandomArbitrary(1, 100)),
         position: [getRandomArbitrary(-50, 50), getRandomArbitrary(-50, 50), getRandomArbitrary(-50, 50)],

@@ -2,7 +2,6 @@ import {
     mobile,
     backend,
     creator,
-    web,
     javascript,
     typescript,
     html,
@@ -18,24 +17,41 @@ import {
     compas_icon_white,
     usi,
     gkr,
-    carrent,
-    jobit,
-    tripguide,
+    eth,
     threejs,
+    rosp,
+    compas_viewer,
+    ribbed_slab,
+    irp,
+    ml_rosp,
+    concrete_canoe,
+    bachelor_project,
+    bachelor_thesis,
+    master_thesis,
+    tku,
   } from "../assets";
   
   export const navLinks = [
     {
       id: "about",
       title: "About",
+      type: 'anchor',
     },
     {
       id: "work",
-      title: "Work",
+      title: "Project",
+      type: 'anchor',
     },
     {
       id: "contact",
       title: "Contact",
+      type: 'anchor',
+    },
+    {
+      id: "github",
+      title: "Github",
+      type: "URL",
+      url: 'https://github.com/PingHsunTsai',
     },
   ];
   
@@ -135,7 +151,7 @@ import {
       company_name: "ETH Zurich BRG",
       icon: compas_icon_white,
       url: "https://block.arch.ethz.ch/brg/about",
-      iconBg: "#000000",
+      iconBg: "#FFFFFF",
       date: "04/2024 -- Present",
       points: [
         "Key-skill: Python, Pyside, PyOpenGL, Github",
@@ -168,7 +184,7 @@ import {
       company_name: "USI FMAA",
       icon: usi,
       url: "",
-      iconBg: "#000000",
+      iconBg: "#FFFFFF",
       date: "09/2022 -- 02/2024",
       points: [
         "key skill: Python, CAD, Rhino, grasshopper.",
@@ -193,7 +209,32 @@ import {
       ],
     },
   ];
-  
+
+  const study_experiences = [
+    {
+      title: "ETH Zurich",
+      company_name: "MAS Architecture and Digital Fabrication",
+      icon: eth,
+      url: "https://www.masdfab.arch.ethz.ch/",
+      iconBg: "#ffffff",
+      date: "09/2019 -- 09/2020",
+      points: [
+
+      ],
+    },
+    {
+      title: "TamKang University",
+      company_name: "Bachelor of Architecture",
+      url: "https://www.tku.edu.tw/",
+      icon: tku,
+      iconBg: "#ffffff",
+      date: "09/2013 -- 09/2018",
+      points: [
+
+      ],
+    },
+  ];
+
   const testimonials = [
     {
       testimonial:
@@ -220,71 +261,101 @@ import {
       image: "https://randomuser.me/api/portraits/women/6.jpg",
     },
   ];
-  
+
   const projects = [
     {
-      name: "Car Rent",
+      name: "Robotic On-Site Plastering",
       description:
-        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
-      tags: [
-        {
-          name: "react",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "mongodb",
-          color: "green-text-gradient",
-        },
-        {
-          name: "tailwind",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: carrent,
-      source_code_link: "https://github.com/",
+        `This project presents continuous, mobile Robotic Plaster Spraying (RPS)
+         a thin-layer, spray-based printing-in-motion technique using cementitious plaster 
+         realized on a prototypical construction site. Resulting in a stable prototype and control system.`,
+      tags: "GKR Project",
+      image: rosp,
+      source_code_link: "https://www.sciencedirect.com/science/article/pii/S0926580522005040",
     },
     {
-      name: "Job IT",
+      name: "Compas Viewer",
       description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-      tags: [
-        {
-          name: "react",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "restapi",
-          color: "green-text-gradient",
-        },
-        {
-          name: "scss",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: jobit,
-      source_code_link: "https://github.com/",
+        `COMPAS Viewer is an open-source tool designed for the visualization 
+        and interaction with computational models and data structures in the COMPAS framework.`,
+      tags: "BRG Project",
+      image: compas_viewer,
+      source_code_link: "https://github.com/compas-dev/compas_viewer",
     },
     {
-      name: "Trip Guide",
+      name: "Sustainable Ribbed Slabs With 3D Printed Form-work",
       description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-      tags: [
-        {
-          name: "nextjs",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "supabase",
-          color: "green-text-gradient",
-        },
-        {
-          name: "css",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: tripguide,
-      source_code_link: "https://github.com/",
+        `The project RIBB3D challenges the conventional design of floor slabs and allows to reinforced
+         concrete structures in a material-efficient manner. By using robotic 3D printing to create customized
+          plastic form-work for an uncommon two-way ribbed floor slab, the new approach uses 40 percent 
+          less concrete than a conventional solid slab, with no compromise on performance.`,
+      tags: "GKR Project",
+      image: ribbed_slab,
+      source_code_link: "https://kaufmann.ibk.ethz.ch/research/selected-research-projects/RIBB3D.html",
+    },
+    {
+      name: "MAS Dfab T2 Project: Intuitive Robotic Plastering",
+      description:
+        `The extent of thin-layer printing thesis combined with the interactive computational model and
+         design procedure of IRoP, enables users to design, preview, and record a set of spray paths 
+         (robot trajectories) on-site - projected onto the walls of the room in real-time.`,
+      tags: "Teaching Project",
+      image: irp,
+      source_code_link: "https://videos.files.wordpress.com/BV8YGQzu/intuitive-robotic-plastering_mp4_hd.mp4",
+    },
+    {
+      name: "SDSC Master Thesis: ML-Based Predictive Modeling for Robotic Plastering",
+      description:
+        `This project aims to develop an ML-based design and fabrication workflow for a robotic on-site plastering process
+         a real-world application. For this, data is collected during the robotic plastering process by 
+         a 3D depth camera, comprising the fabrication parameters (i.e., velocity and distance of spraying) 
+         as well as the acquired surface geometry.`,
+      tags: "Teaching Project",
+      image: ml_rosp,
+      source_code_link: "https://assets-global.website-files.com/63f1f58039379743bd96333e/6489e2029de27d5f21cf6994_student-project_epfl-ethz_ml-based-predictive-modeling-for-robotic-on-site-plastering.pdf",
+    },
+    {
+      name: "PCBM Bachelor thesis: Concrete Canoe",
+      description:
+        `Tutoring bachelor’s thesis aims to explore the potential of using ultra-thin paper as a 
+        formwork for the spraying of fiber-reinforced concrete. To explore this, it was targeted to produce 
+        a fully functional canoe for the Concrete Canoe Race on the 13.04.2023 in Delft (NL).`,
+      tags: "Teaching Project",
+      image: concrete_canoe,
+      source_code_link: "https://drive.google.com/file/d/1JerTw5pgleKOFdsnnF7bGESm3Ro7esAt/view?usp=drive_link",
+    },
+    {
+      name: "RPS: Crafting Surfaces with Adaptive Thin-Layer Printing",
+      description:
+        `This method describes the experimental setup and the initial
+        results of the data collection method involving systematic studies with physical
+        testing, allowing to develop model to predict and visualize the complex-to-
+        simulate material behavior, which might eventually enable to design with the
+        plasticity of this material in a digital design tool`,
+      tags: "Master Thesis",
+      image: master_thesis,
+      source_code_link: "https://www.researchgate.net/publication/354186856_Robotic_Plaster_Spraying_Crafting_Surfaces_with_Adaptive_Thin-Layer_Printing",
+    },
+    {
+      name: "Continuous Metal Folding",
+      description:
+        `This project involved the creation of an aluminum-thin shell pavilion, 
+        a self-standing structure crafted through a parametric fusion of folding patterns 
+        and structural optimization algorithms.`,
+      tags: "Bachelor Thesis",
+      image: bachelor_thesis,
+      source_code_link: "https://vimeo.com/272080646",
+    },
+    {
+      name: "Free-form To Model",
+      description:
+        `This workshop, based on my bachelor thesis, guides students through the design workflow, including computational design, 
+        geometry optimization, fabrication, and presenting ideas with Grasshopper and Python, developing a comprehensive skill set 
+        in modern architectural techniques.`,
+      tags: "Bachelor Project",
+      image: bachelor_project,
+      source_code_link: "https://drive.google.com/file/d/1W-a8TuavSwadO2WeMSb4VP4dlf_cIR84/view?usp=drive_link",
     },
   ];
-  
-  export { services, technologies, experiences, testimonials, projects };
+
+  export { services, technologies, experiences, testimonials, projects, study_experiences };
