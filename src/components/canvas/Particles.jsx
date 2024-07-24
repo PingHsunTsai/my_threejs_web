@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { useMemo, useRef, useCallback, Suspense } from 'react';
-import { Canvas, useFrame, useLoader } from '@react-three/fiber';
+import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber';
 import { OrbitControls, PointMaterial, Preload } from '@react-three/drei';
 import { cloud_texture } from '../../assets';
 import { TextureLoader } from 'three';
@@ -16,6 +16,7 @@ function getRandomColor() {
 function Particles({ count, position, color, scale }) {
   const defaultColor = new THREE.Color(color)
   const hoverColor = new THREE.Color('hotpink')
+  
   const [positions, colors, scales] = useMemo(() => {
     const positions = [...new Array(count * 3)].map(() => getRandomArbitrary(-2.2, 2.2))
     const colors = [...new Array(count)].flatMap(() => defaultColor.toArray())
@@ -54,9 +55,21 @@ function Particles({ count, position, color, scale }) {
   return (
     <points ref={points} onPointerOver={hover} onPointerOut={unhover} position={position}>
       <bufferGeometry>
-        <bufferAttribute usage={THREE.DynamicDrawUsage} attach="attributes-position" args={[positions, 3]} />
-        <bufferAttribute usage={THREE.DynamicDrawUsage} attach="attributes-color" args={[colors, 3]} />
-        <bufferAttribute usage={THREE.DynamicDrawUsage} attach="attributes-scale" args={[scales, 1]} />
+        <bufferAttribute 
+          usage={THREE.DynamicDrawUsage} 
+          attach="attributes-position" 
+          args={[positions, 3]} 
+        />
+        <bufferAttribute 
+          usage={THREE.DynamicDrawUsage} 
+          attach="attributes-color" 
+          args={[colors, 3]} 
+        />
+        <bufferAttribute 
+          usage={THREE.DynamicDrawUsage} 
+          attach="attributes-scale" 
+          args={[scales, 1]} 
+        />
       </bufferGeometry>
       <PointMaterial
         transparent
@@ -78,7 +91,11 @@ const ParticlesCanvas = () => {
     for (let i = 0; i < 100; i++) {
       systems.push({
         count: Math.floor(getRandomArbitrary(30, 100)),
-        position: [getRandomArbitrary(-50, 50), getRandomArbitrary(-85, 85), getRandomArbitrary(-50, 50)],
+        position: [
+          getRandomArbitrary(-50, 50), 
+          getRandomArbitrary(-85, 85), 
+          getRandomArbitrary(-50, 50)
+        ],
         color: getRandomColor(),
         scale: getRandomArbitrary(1, 10)
       })
@@ -87,11 +104,21 @@ const ParticlesCanvas = () => {
   }, [])
 
   return (
-    <div className='w-full h-auto absolute inset-0 z-[-1]'>
-      <Canvas orthographic camera={{ zoom: 40, position: [200, 200, 200] }} raycaster={{ params: { Points: { threshold: 0.2 } } }}>
+    <div className='w-full h-full absolute inset-0 z-[-1]'>
+      <Canvas 
+        orthographic 
+        camera={{ zoom: 40, position: [200, 200, 200] }} 
+        raycaster={{ params: { Points: { threshold: 0.2 } } }}
+      >
         <Suspense>
           {particleSystems.map((system, index) => (
-            <Particles key={index} count={system.count} position={system.position} color={system.color} scale={system.scale} />
+            <Particles 
+              key={index} 
+              count={system.count} 
+              position={system.position} 
+              color={system.color} 
+              scale={system.scale} 
+            />
           ))}
           <OrbitControls
             autoRotate
