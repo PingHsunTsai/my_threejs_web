@@ -4,6 +4,7 @@ import { Canvas, useFrame, useLoader } from '@react-three/fiber';
 import { OrbitControls, PointMaterial, Preload } from '@react-three/drei';
 import { cloud_texture } from '../../assets';
 import { TextureLoader } from 'three';
+import { InstancedBufferAttribute, InstancedBufferGeometry, ShaderMaterial } from 'three';
 
 function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
@@ -42,10 +43,14 @@ function Particles({ count, position, color, scale }) {
   }, [defaultColor, scales])
 
   useFrame((state) => {
-    const t = state.clock.elapsedTime
-    positions.forEach((p, i) => (positions[i] += Math[i % 2 ? 'sin' : 'cos'](1000 * i + t) / 300))
-    points.current.geometry.attributes.position.needsUpdate = true
-  })
+    const t = state.clock.elapsedTime;
+    positions.forEach((p, i) => {
+      positions[i] += Math[i % 2 ? 'sin' : 'cos'](1000 * i + t) / 300;
+    });
+    if (points.current) {
+      points.current.geometry.attributes.position.needsUpdate = true;
+    }
+  });
 
   return (
     <points ref={points} onPointerOver={hover} onPointerOut={unhover} position={position}>
@@ -68,13 +73,56 @@ function Particles({ count, position, color, scale }) {
   )
 }
 
+function InstancedParticles({ count, position, color, scale }) {
+  const [geometry, setGeometry] = useState(() => {
+    const geometry = new InstancedBufferGeometry();
+    const positions = new Float32Array(count * 3);
+    const colors = new Float32Array(count * 3);
+    const scales = new Float32Array(count);
+
+    for (let i = 0; i < count; i++) {
+      positions.set([Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1], i * 3);
+      colors.set([Math.random(), Math.random(), Math.random()], i * 3);
+      scales[i] = Math.random();
+    }
+
+    geometry.setAttribute('position', new InstancedBufferAttribute(positions, 3));
+    geometry.setAttribute('color', new InstancedBufferAttribute(colors, 3));
+    geometry.setAttribute('scale', new InstancedBufferAttribute(scales, 1));
+
+    return geometry;
+  });
+
+  const material = new ShaderMaterial({
+    vertexShader: `
+      attribute float scale;
+      void main() {
+        vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+        gl_PointSize = scale * (300.0 / -mvPosition.z);
+        gl_Position = projectionMatrix * mvPosition;
+      }
+    `,
+    fragmentShader: `
+      void main() {
+        gl_FragColor = vec4(color, 1.0);
+      }
+    `,
+    transparent: true,
+    vertexColors: true,
+  });
+
+  return (
+    <points geometry={geometry} material={material} position={position} />
+  );
+}
+
 const ParticlesCanvas = () => {
   const particleSystems = useMemo(() => {
     const systems = []
     for (let i = 0; i < 100; i++) {
       systems.push({
-        count: Math.floor(getRandomArbitrary(1, 100)),
-        position: [getRandomArbitrary(-50, 50), getRandomArbitrary(-50, 50), getRandomArbitrary(-50, 50)],
+        count: Math.floor(getRandomArbitrary(30, 100)),
+        position: [getRandomArbitrary(-50, 50), getRandomArbitrary(-85, 85), getRandomArbitrary(-50, 50)],
         color: getRandomColor(),
         scale: getRandomArbitrary(1, 10)
       })
