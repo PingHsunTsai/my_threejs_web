@@ -1,7 +1,9 @@
-import * as THREE from 'three'
-import { useMemo, useRef, useCallback, Suspense } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls, PointMaterial, Preload } from '@react-three/drei'
+import * as THREE from 'three';
+import { useMemo, useRef, useCallback, Suspense } from 'react';
+import { Canvas, useFrame, useLoader } from '@react-three/fiber';
+import { OrbitControls, PointMaterial, Preload } from '@react-three/drei';
+import { cloud_texture } from '../../assets';
+import { TextureLoader } from 'three';
 
 function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
@@ -15,13 +17,15 @@ function Particles({ count, position, color, scale }) {
   const defaultColor = new THREE.Color(color)
   const hoverColor = new THREE.Color('hotpink')
   const [positions, colors, scales] = useMemo(() => {
-    const positions = [...new Array(count * 3)].map(() => getRandomArbitrary(-3, 3))
+    const positions = [...new Array(count * 3)].map(() => getRandomArbitrary(-2.2, 2.2))
     const colors = [...new Array(count)].flatMap(() => defaultColor.toArray())
     const scales = new Float32Array([...new Array(count)].map(() => getRandomArbitrary(0.5, 10) * scale))
     return [new Float32Array(positions), new Float32Array(colors), scales]
   }, [count, defaultColor, scale])
 
   const points = useRef(null)
+  const texture = useLoader(TextureLoader, cloud_texture);
+
   const hover = useCallback((e) => {
     e.stopPropagation()
     hoverColor.toArray(points.current.geometry.attributes.color.array, e.index * 3)
@@ -50,7 +54,16 @@ function Particles({ count, position, color, scale }) {
         <bufferAttribute usage={THREE.DynamicDrawUsage} attach="attributes-color" args={[colors, 3]} />
         <bufferAttribute usage={THREE.DynamicDrawUsage} attach="attributes-scale" args={[scales, 1]} />
       </bufferGeometry>
-      <PointMaterial transparent vertexColors size={getRandomArbitrary(10, 100)} sizeAttenuation={false} depthWrite={false} toneMapped={false} />
+      <PointMaterial
+        transparent
+        vertexColors
+        opacity={0.3}
+        map={texture}
+        size={getRandomArbitrary(70, 150)} 
+        sizeAttenuation={true} 
+        depthWrite={false} 
+        toneMapped={true} 
+       />
     </points>
   )
 }
@@ -58,7 +71,7 @@ function Particles({ count, position, color, scale }) {
 const ParticlesCanvas = () => {
   const particleSystems = useMemo(() => {
     const systems = []
-    for (let i = 0; i < 80; i++) {
+    for (let i = 0; i < 100; i++) {
       systems.push({
         count: Math.floor(getRandomArbitrary(1, 100)),
         position: [getRandomArbitrary(-50, 50), getRandomArbitrary(-50, 50), getRandomArbitrary(-50, 50)],

@@ -38,6 +38,8 @@ import bachelor_project from "./bachelor_project.png";
 import bachelor_thesis from "./bachelor_thesis.png";
 import master_thesis from "./master_thesis.png";
 
+import cloud_texture from "./subtle-white-feathers.png";
+
 export {
   logo,
   backend,
@@ -75,4 +77,5 @@ export {
   usi,
   eth,
   tku,
+  cloud_texture,
 };
