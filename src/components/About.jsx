@@ -6,7 +6,7 @@ import { SectionWrapper } from '../hoc';
 import { fadeIn , textVariant } from '../utils/motion';
 
 
-const ServiceCard = ({index, title, icon}) => {
+const ServiceCard = ({index, title, skill}) => {
   return (
     <Tilt className="xs:w-[250px] w-full">
       <motion.div
@@ -23,6 +23,7 @@ const ServiceCard = ({index, title, icon}) => {
         >
           {/* <img src={icon} alt={title} className="w-16 h-16 object-contain" /> */}
           <h3 className='text-white text-[20px] font-bold text-center'>{title}</h3>
+          <h3 className='blue-text-gradient text-[14px] font-semibold text-center'>{skill}</h3>
         </div>
       </motion.div>
     </Tilt>

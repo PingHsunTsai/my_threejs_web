@@ -59,34 +59,32 @@ import {
     {
       title: "Software Engineer",
       icon: '',
-    },
-    {
-      title: "Computaional Design",
-      icon: '',
+      skill: "Key-skill: Python, Java, C++, Docker, Git",
     },
     {
       title: "3D Modeling",
-      icon: mobile,
-    },
-    {
-      title: "Geometry Optimization",
-      icon: backend,
+      icon: '',
+      skill: "Key-skill: Rhino3D, Maya, Grasshopper, CAD",
     },
     {
       title: "Robotic Fabrication",
-      icon: creator,
+      icon: '',
+      skill: "Key-skill: ROS, UR-Robot, ABB, KUKA",
     },
     {
       title: "Automation Itegration",
-      icon: creator,
+      icon: '',
+      skill: "Key-skill: OPCUA",
     },
     {
       title: "Computer Vision",
-      icon: creator,
+      icon: '',
+      skill: "Key-skill: Open3D, OpenCV, CGAL, Azure-Kinect, Intel-RealSense, HTV-Vive",
     },
     {
       title: "Graphic User Interface",
       icon: creator,
+      skill: "Key-skill: Qt, Pyside6, PyOpenGL, ReactJS, theeJS",
     },
   ];
   

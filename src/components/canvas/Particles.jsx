@@ -74,7 +74,7 @@ function Particles({ count, position, color, scale }) {
       <PointMaterial
         transparent
         vertexColors
-        opacity={0.3}
+        opacity={0.25}
         map={texture}
         size={getRandomArbitrary(70, 150)} 
         sizeAttenuation={true} 
