@@ -1,6 +1,4 @@
 import {
-    mobile,
-    backend,
     creator,
     javascript,
     typescript,
@@ -53,6 +51,12 @@ import {
       type: "URL",
       url: 'https://github.com/PingHsunTsai',
     },
+    {
+      id: "profolio",
+      title: "Profolio",
+      type: "URL",
+      url: 'https://drive.google.com/file/d/15aZcPAWZLu__rxBrpDgF-N_-74-vq90M/view?usp=sharing',
+    },
   ];
   
   const services = [
@@ -64,12 +68,17 @@ import {
     {
       title: "3D Modeling",
       icon: '',
-      skill: "Key-skill: Rhino3D, Maya, Grasshopper, CAD",
+      skill: "Key-skill: Rhino3D, Maya, Grasshopper",
     },
     {
       title: "Robotic Fabrication",
       icon: '',
       skill: "Key-skill: ROS, UR-Robot, ABB, KUKA",
+    },
+    {
+      title: "Digital Fabrication",
+      icon: '',
+      skill: "Key-skill: CAD, CNC, 3D-Printing",
     },
     {
       title: "Automation Itegration",
@@ -79,12 +88,12 @@ import {
     {
       title: "Computer Vision",
       icon: '',
-      skill: "Key-skill: Open3D, OpenCV, CGAL, Azure-Kinect, Intel-RealSense, HTV-Vive",
+      skill: "Key-skill: Open3D, OpenCV, CGAL, Azure-Kinect, Intel-RealSense, LiDar, HTV-Vive",
     },
     {
       title: "Graphic User Interface",
       icon: creator,
-      skill: "Key-skill: Qt, Pyside6, PyOpenGL, ReactJS, theeJS",
+      skill: "Key-skill: Qt, RQT, Pyside6, PyOpenGL, ReactJS, theeJS, Adobe Suite",
     },
   ];
   
@@ -152,7 +161,6 @@ import {
       iconBg: "#FFFFFF",
       date: "04/2024 -- Present",
       points: [
-        "Key-skill: Python, Pyside, PyOpenGL, Github",
         "Developed features for a 3D graphical user interface.",
         "Improved rendering speed by optimizing and removing redundant processes.",
         "Maintained and resolved bugs using GitHub issue tracking.",
@@ -166,7 +174,6 @@ import {
       iconBg: "#000000",
       date: "05/2021 -- 06/2024",
       points: [
-        "Key-skill: Python, C++, Qt, ROS, Docker, Azure Kinect, Open3d, CGAL, OPCUA, CAD, Rhino, Grasshopper, Gitlab.",
         "Collaborated as a software engineer with a team of academic researchers and an \\industrial partner to develop a next-generation mobile construction robot.",
         "Worked across disciplines, including robotics engineering and material science.",
         "Implemented and researched various depth sensors and LiDAR.",
@@ -178,14 +185,13 @@ import {
       ],
     },
     {
-      title: "Software Engineer",
+      title: "Scientific Assistant",
       company_name: "USI FMAA",
       icon: usi,
       url: "",
       iconBg: "#FFFFFF",
       date: "09/2022 -- 02/2024",
       points: [
-        "key skill: Python, CAD, Rhino, grasshopper.",
         "Served as a software engineer and robotics technician.",
         "Specialized in 3D geometry for origami formwork and optimization of print paths for a 3D clay printing PhD project.",
         "Tutored several student projects.",
@@ -199,7 +205,7 @@ import {
       iconBg: "#000000",
       date: "09/2020 -- 04/2021",
       points: [
-        "key skill: Python, Intel-RealSense, HTC Vive, CAD, Rhino, grasshopper.",
+        "Key-Skill: Python, Intel-RealSense, HTC Vive, CAD, Rhino, grasshopper.",
         "Served as a software developer and robotics technician.",
         "Supported AR/VR implementation.",
         "Assisted with depth sensor integration.",
@@ -217,7 +223,7 @@ import {
       iconBg: "#ffffff",
       date: "09/2019 -- 09/2020",
       points: [
-
+        "Master Thesis: RPS: Crafting Surfaces with Adaptive Thin-Layer Printing",
       ],
     },
     {
@@ -228,7 +234,7 @@ import {
       iconBg: "#ffffff",
       date: "09/2013 -- 09/2018",
       points: [
-
+        "Bachelor Thesis: RPS: Continuous Metal Folding",
       ],
     },
   ];
@@ -263,6 +269,7 @@ import {
   const projects = [
     {
       name: "Robotic On-Site Plastering",
+      skill: "Key-Skill: Python, C++, UR-Robot, Qt, ROS, Docker, Azure Kinect, CGAL, Open3D, OpenCV, OPCUA, CAD, Gitlab.",
       description:
         `This project presents continuous, mobile Robotic Plaster Spraying (RPS)
          a thin-layer, spray-based printing-in-motion technique using cementitious plaster 
@@ -273,6 +280,7 @@ import {
     },
     {
       name: "Compas Viewer",
+      skill: "Key-Skill: Python, Pyside6, PyOpenGL, Github",
       description:
         `COMPAS Viewer is an open-source tool designed for the visualization 
         and interaction with computational models and data structures in the COMPAS framework.`,
@@ -282,6 +290,7 @@ import {
     },
     {
       name: "Sustainable Ribbed Slabs With 3D Printed Form-work",
+      skill: "Key-Skill: Python, ABB, Rhino, grasshopper, 3D-Printing",
       description:
         `The project RIBB3D challenges the conventional design of floor slabs and allows to reinforced
          concrete structures in a material-efficient manner. By using robotic 3D printing to create customized
@@ -293,6 +302,7 @@ import {
     },
     {
       name: "MAS Dfab T2 Project: Intuitive Robotic Plastering",
+      skill: "Key-Skill: Python, UR-Robot, Rhino, grasshopper, Intel-RealSense, HTV-Vive",
       description:
         `The extent of thin-layer printing thesis combined with the interactive computational model and
          design procedure of IRoP, enables users to design, preview, and record a set of spray paths 
@@ -303,6 +313,7 @@ import {
     },
     {
       name: "SDSC Master Thesis: ML-Based Predictive Modeling for Robotic Plastering",
+      skill: "Key-Skill: Python, GNN",
       description:
         `This project aims to develop an ML-based design and fabrication workflow for a robotic on-site plastering process
          a real-world application. For this, data is collected during the robotic plastering process by 
@@ -314,6 +325,7 @@ import {
     },
     {
       name: "PCBM Bachelor thesis: Concrete Canoe",
+      skill: "Key-Skill: Python, Rhino, grasshopper, CAD",
       description:
         `Tutoring bachelor’s thesis aims to explore the potential of using ultra-thin paper as a 
         formwork for the spraying of fiber-reinforced concrete. To explore this, it was targeted to produce 
@@ -324,6 +336,7 @@ import {
     },
     {
       name: "RPS: Crafting Surfaces with Adaptive Thin-Layer Printing",
+      skill: "Key-Skill: Python, UR-Robot, Open3D, Intel-RealSense, DNN",
       description:
         `This method describes the experimental setup and the initial
         results of the data collection method involving systematic studies with physical
@@ -336,6 +349,7 @@ import {
     },
     {
       name: "Continuous Metal Folding",
+      skill: "Key-Skill: Python, KUKA, Rhino, grasshopper, CAD, CNC",
       description:
         `This project involved the creation of an aluminum-thin shell pavilion, 
         a self-standing structure crafted through a parametric fusion of folding patterns 
@@ -346,6 +360,7 @@ import {
     },
     {
       name: "Free-form To Model",
+      skill: "Key-Skill: Python, Rhino, grasshopper, CAD",
       description:
         `This workshop, based on my bachelor thesis, guides students through the design workflow, including computational design, 
         geometry optimization, fabrication, and presenting ideas with Grasshopper and Python, developing a comprehensive skill set 

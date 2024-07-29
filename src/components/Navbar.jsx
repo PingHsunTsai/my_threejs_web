@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 import { navLinks } from '../constants';
-import { menu, close } from '../assets';
+import { menu, close, logo } from '../assets';
 
 const Navbar = () => {
   const [active, setActive] = useState('');
@@ -18,6 +18,7 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
+          <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
           <p className="text-white text-[18px] font-bold cursor-pointer">Pitsai</p>
         </Link>
         <ul className="list-none hidden sm:flex flex-row gap-10">
