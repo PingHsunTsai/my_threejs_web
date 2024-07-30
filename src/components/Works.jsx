@@ -17,7 +17,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
           scale: 1,
           speed: 450, 
         }}
-        className="bg-primary p-5 rounded-2xl sm:w-[360px] w-full ring-1 ring-gray-500"
+        className="bg-primary p-5 rounded-2xl sm:w-[350px] w-full ring-1 ring-gray-500"
       >
         <div className="relative w-full">
           <img
@@ -42,13 +42,6 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
           <p className="mt-2 text-secondary text-[14px]">{description}</p>
         </div>
 
-        {/* <div className="mt-4 flex flex-wrap gap-2">
-          {tags.map((tag) =>(
-            <p key={tag.name} className={`text-[14px] blue-text-gradient`}>
-              #{tag.name}
-            </p>
-          ))}
-        </div> */}
       </Tilt>
     </motion.div>
   )
@@ -56,7 +49,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
 
 const Work = () => {
   return (
-    <>
+    <div>
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionSubText} text-outline`}>My project</p>
         <h2 className={`${styles.sectionHeadText} text-outline`}>Project.</h2>
@@ -75,7 +68,7 @@ const Work = () => {
         </motion.p>
       </div>
 
-      <div className="mt-20 flex flex-wrap gap-7">
+      <div className="mt-20 flex flex-wrap gap-7 container">
         {projects.map((project, index) => (
           <ProjectCard
             key={`project-${index}`}
@@ -83,9 +76,9 @@ const Work = () => {
             {...project}
           />
         ))}
-
       </div>
-    </>
+
+    </div>
   )
 }
 
