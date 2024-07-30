@@ -14,10 +14,12 @@
 }
 
 /* TODO only aaply to small device */
+@media (max-width: 640px) {
   .container {
     height: 100vh;
     overflow: auto;
   }
+}
 
 .hash-span {
   margin-top: -100px;
