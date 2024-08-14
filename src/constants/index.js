@@ -321,7 +321,7 @@ import {
          as well as the acquired surface geometry.`,
       tags: "Teaching Project",
       image: ml_rosp,
-      source_code_link: "https://assets-global.website-files.com/63f1f58039379743bd96333e/6489e2029de27d5f21cf6994_student-project_epfl-ethz_ml-based-predictive-modeling-for-robotic-on-site-plastering.pdf",
+      source_code_link: "/underconstruction",
     },
     {
       name: "PCBM Bachelor thesis: Concrete Canoe",
@@ -332,7 +332,7 @@ import {
         a fully functional canoe for the Concrete Canoe Race on the 13.04.2023 in Delft (NL).`,
       tags: "Teaching Project",
       image: concrete_canoe,
-      source_code_link: "https://drive.google.com/file/d/1JerTw5pgleKOFdsnnF7bGESm3Ro7esAt/view?usp=drive_link",
+      source_code_link: "/underconstruction",
     },
     {
       name: "RPS: Crafting Surfaces with Adaptive Thin-Layer Printing",

@@ -1,24 +1,15 @@
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HomePage, UnderConstruction } from './pages'; 
 
-import { About, Contact, Experience, Hero, Navbar, Works, ParticlesCanvas } from "./components";
-
-const App = () => {
-
+function App() {
   return (
-    <BrowserRouter>
-      <div className="relative z-0 bg-primary">
-        <Navbar />
-        <Hero />
-        <About />
-        <Experience />
-        <Works />
-        <div className="reletive z-0">
-          <Contact />
-          <ParticlesCanvas />
-        </div>
-      </div>
-    </BrowserRouter>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/underconstruction" element={<UnderConstruction />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
